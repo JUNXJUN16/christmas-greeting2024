@@ -221,16 +221,13 @@
                 light.style.height = light.style.width;
                 lightContainer.appendChild(light);
             }
-
-            const bgMusic = document.getElementById('backgroundMusic');
-            bgMusic.volume = 0.5;
-            bgMusic.play();
         };
 
         function submitName() {
             const name = document.getElementById('nameInput').value;
             const greeting = document.getElementById('greeting');
             const curvedText = document.getElementById('curvedText');
+            const bgMusic = document.getElementById('backgroundMusic');
 
             if (name.trim() !== "") {
                 greeting.textContent = `Merry Christmas, ${name}!`;
@@ -245,6 +242,9 @@
 
                 // Trigger confetti
                 startConfetti();
+
+                // Play background music on submit
+                bgMusic.play();
             } else {
                 alert('Please enter your name.');
             }
